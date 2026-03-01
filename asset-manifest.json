@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/coalpot/static/css/main.4c503b05.css",
-    "main.js": "/coalpot/static/js/main.f8d2c2ad.js",
+    "main.js": "/coalpot/static/js/main.c4a24f70.js",
     "static/media/decoalpotvideo.mp4": "/coalpot/static/media/decoalpotvideo.0defc3bea3aa22b50828.mp4",
     "static/media/logo.png": "/coalpot/static/media/logo.7c3ce57dbfc32c24ff26.png",
     "index.html": "/coalpot/index.html",
     "main.4c503b05.css.map": "/coalpot/static/css/main.4c503b05.css.map",
-    "main.f8d2c2ad.js.map": "/coalpot/static/js/main.f8d2c2ad.js.map"
+    "main.c4a24f70.js.map": "/coalpot/static/js/main.c4a24f70.js.map"
   },
   "entrypoints": [
     "static/css/main.4c503b05.css",
-    "static/js/main.f8d2c2ad.js"
+    "static/js/main.c4a24f70.js"
   ]
 }
