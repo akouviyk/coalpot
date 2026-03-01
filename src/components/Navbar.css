@@ -1,0 +1,216 @@
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ── HAPPY HOUR TOP BANNER ── */
+.hh-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1100;
+  height: 36px;
+  background: #8b1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hh-banner-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 32s linear infinite;
+  gap: 0;
+}
+
+.hh-banner-segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+
+.hh-star {
+  color: #f4c88a;
+  font-size: 0.6rem;
+}
+
+.hh-time {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #f4c88a;
+  text-transform: uppercase;
+}
+
+.hh-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hh-dot {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.7rem;
+}
+
+.hh-item {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hh-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── NAVBAR — sits below the banner ── */
+.navbar {
+  position: fixed;
+  top: 36px; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0;
+  transition: background 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+  border-bottom: 1px solid transparent;
+  background: rgba(255, 255, 255, 0);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo */
+.navbar-logo img {
+  height: 52px;
+  width: auto;
+  transition: opacity 0.2s;
+}
+.navbar-logo:hover img { opacity: 0.8; }
+
+/* Nav links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease);
+}
+
+.nav-link:hover { color: var(--text); }
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--text); }
+
+/* Reservations button */
+.navbar-links .btn {
+  margin-left: 0.5rem;
+  padding: 0.65rem 1.5rem;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+
+  .navbar-links {
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+    z-index: 999;
+  }
+
+  .navbar-links.open { opacity: 1; pointer-events: all; }
+
+  .nav-link {
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .navbar-links .btn { margin-left: 0; }
+}

@@ -1,0 +1,10 @@
+# De' Coal Pot — robots.txt
+User-agent: *
+Allow: /
+
+# Disallow any build artifacts
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
+# Sitemap
+Sitemap: https://www.decoalpot.com/sitemap.xml

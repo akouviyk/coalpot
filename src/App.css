@@ -1,0 +1,4 @@
+/* App shell — banner (36px) + navbar (80px) = 116px */
+.page {
+  padding-top: 116px;
+}
